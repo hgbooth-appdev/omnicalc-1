@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def squareResForm
-
+    
+    @num = params.fetch("number").to_f
+    @numSq = @num * @num
     render({:template => "calculationTemplates/squareResForm.html.erb"})
 
   end
