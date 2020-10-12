@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
 
   def squareRootRes
 
+    @num = params.fetch("user_number").to_f
+    @sqRt = Math.sqrt(@num)
 
     render({:template => "calculationTemplates/squareRootRes.html.erb"})
   end
