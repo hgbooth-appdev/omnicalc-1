@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
     @apr = params.fetch("user_apr").to_f
     @rate = @apr/1200
-    @apr = (@apr + 0.00000000001).round(4)
+    @apr = @apr
     
     @years = params.fetch("user_years").to_f
     @months = @years*12
