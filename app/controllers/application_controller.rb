@@ -1,17 +1,46 @@
 class ApplicationController < ActionController::Base
 
-
-  def blankSquareForm
-
+  def squareForm
     render({:template => "calculationTemplates/squareForm.html.erb"})
-
   end
 
-  def squareResForm
-    
+  def squareRes
     @num = params.fetch("number").to_f
     @numSq = @num * @num
-    render({:template => "calculationTemplates/squareResForm.html.erb"})
-
+    render({:template => "calculationTemplates/squareRes.html.erb"})
   end
+
+  def squareRootForm
+    render({:template => "calculationTemplates/squareRootForm.html.erb"})
+  end
+
+  def squareRootRes
+
+
+    render({:template => "calculationTemplates/squareRootRes.html.erb"})
+  end
+
+  def paymentForm
+    render({:template => "calculationTemplates/paymentForm.html.erb"})
+  end
+
+  def paymentRes
+
+
+    render({:template => "calculationTemplates/paymentRes.html.erb"})
+  end
+  
+  def randomForm
+    render({:template => "calculationTemplates/randomForm.html.erb"})
+  end
+
+  def randomRes
+    
+    @lower = params.fetch("user_min").to_f
+    @upper = params.fetch("user_max").to_f
+
+    @rand = rand()*(@upper-@lower) + @lower
+    render({:template => "calculationTemplates/randomRes.html.erb"})
+  end
+
 end
